@@ -1,7 +1,7 @@
 RUN useradd -u 1000 cntrusr
 
 FROM registry.access.redhat.com/ubi8/ruby-27
-USER default
+USER cntrusr
 EXPOSE 8080
 ENV RACK_ENV production
 ENV RAILS_ENV production
@@ -10,6 +10,6 @@ ENV GEM_HOME ~/.gem
 RUN bundle install
 CMD ["./run.sh"]
 
-USER cntrusr
+USER root
 RUN chmod og+rw /opt/app-root/src/db
-USER default
+USER cntrusr
