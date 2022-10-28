@@ -1,6 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ruby-27
-RUN addgroup -S appusr && adduser -S appusr -G appusr 
-USER appusr
+USER default
 EXPOSE 8080
 ENV RACK_ENV production
 ENV RAILS_ENV production
@@ -11,4 +10,4 @@ CMD ["./run.sh"]
 
 USER root
 RUN chmod og+rw /opt/app-root/src/db
-USER appusr
+USER default
