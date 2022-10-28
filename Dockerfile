@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi8/ruby-27
-RUN addgroup -g 1101 -S appuser && adduser -u 1101 -S appuser  -G appuser 
+RUN addgroup -S appusr && adduser -S appusr -G appusr 
 USER appusr
 EXPOSE 8080
 ENV RACK_ENV production
