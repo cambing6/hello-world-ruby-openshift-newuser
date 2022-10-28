@@ -12,4 +12,4 @@ CMD ["./run.sh"]
 
 USER cntrusr
 RUN chmod og+rw /opt/app-root/src/db
-USER cntrusr
+USER default
